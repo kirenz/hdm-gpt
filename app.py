@@ -3,7 +3,6 @@ import streamlit as st
 import openai
 import uuid
 import time
-import pandas as pd
 import io
 from openai import OpenAI
 import os
