@@ -27,8 +27,8 @@ if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
 # Set up the page
-st.set_page_config(page_title="HdM GPT")
-st.sidebar.title("HdM GPT")
+st.set_page_config(page_title="GPT Assistant")
+st.sidebar.title("Custom GPT")
 st.sidebar.divider()
 st.sidebar.markdown("Assistant GPT: Name")
 st.sidebar.divider()
