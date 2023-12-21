@@ -30,8 +30,6 @@ if "retry_error" not in st.session_state:
 st.set_page_config(page_title="GPT Assistant")
 st.sidebar.title("Custom GPT")
 st.sidebar.divider()
-st.sidebar.markdown("Assistant GPT: Name")
-st.sidebar.divider()
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
@@ -70,9 +68,10 @@ if prompt := st.chat_input("Wie kann ich Ihnen helfen?"):
         thread_id=st.session_state.thread.id,
         assistant_id=st.session_state.assistant.id,
     )
-    if st.session_state.retry_error < 3:
-        time.sleep(1)
-        st.rerun()
+    with st.spinner('Antwort wird generiert...'):
+        if st.session_state.retry_error < 3:
+            time.sleep(1)
+            st.rerun()
 
 # Handle run status
 if hasattr(st.session_state.run, 'status'):
