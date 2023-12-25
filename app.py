@@ -27,8 +27,8 @@ if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
 # Set up the page
-st.set_page_config(page_title="GPT Assistant")
-st.sidebar.title("Custom GPT")
+st.set_page_config(page_title="AI Tutor")
+st.sidebar.title("AI Tutor")
 st.sidebar.divider()
 
 # Initialize OpenAI assistant
@@ -90,7 +90,7 @@ if hasattr(st.session_state.run, 'status'):
                 time.sleep(3)
                 st.rerun()
             else:
-                st.error("FEHLER: Die OpenAI-API verarbeitet derzeit zu viele Anfragen. Bitte versuchen Sie es später erneut ......")
+                st.error("Fehler: Die OpenAI-API verarbeitet derzeit zu viele Anfragen. Bitte versuchen Sie es später erneut ......")
 
     elif st.session_state.run.status != "completed":
         st.session_state.run = client.beta.threads.runs.retrieve(
